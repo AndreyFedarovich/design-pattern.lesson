@@ -11,12 +11,12 @@
 
 // ES6 Syntax
 class Server {
-	constructor(ip) {
-		this.ip = ip
-	}
-	getUrl() {
-		console.log(`http://${this.ip}:8080`)
-	}
+  constructor(ip) {
+    this.ip = ip
+  }
+  getUrl() {
+    console.log(`http://${this.ip}:8080`)
+  }
 }
 // -->
 

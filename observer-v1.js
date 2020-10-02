@@ -1,24 +1,24 @@
 class Emitter {
-	constructor() {
-		this.observers = []
-	}
+  constructor() {
+    this.observers = []
+  }
 
-	subscribe(event, fn) {
-		this.observers[event] = [];
-		this.observers[event].push(fn)
+  subscribe(event, fn) {
+    this.observers[event] = [];
+    this.observers[event].push(fn)
 
-		return () => {
-			this.observers[event] = this.observers[event]
-				.filter(observer => observer !== fn)
-		}
-		
-	}
+    return () => {
+      this.observers[event] = this.observers[event]
+        .filter(observer => observer !== fn)
+    }
+    
+  }
 
-	emmit(event, ...args) {
-		this.observers[event].forEach(observer => {
-			observer(...args)
-		});
-	}
+  emmit(event, ...args) {
+    this.observers[event].forEach(observer => {
+      observer(...args)
+    });
+  }
 
 }
 
